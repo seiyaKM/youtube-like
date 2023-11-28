@@ -8,11 +8,18 @@ const drawer = ref(true);
   <v-app-bar>
     <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     <span>app bar</span>
+    <div>
+      <v-text-field variant="outlined"></v-text-field>
+    </div>
   </v-app-bar>
   <v-navigation-drawer v-model="drawer">
     <v-list-item link title="Home" prepend-icon="mdi-home" :to="{ name: 'home' }"></v-list-item>
     <v-list-item link title="Short" prepend-icon="mdi-shower" :to="{ name: 'short' }"></v-list-item>
     <v-list-item link title="Subscription" prepend-icon="mdi-subway" :to="{ name: 'subscription' }"></v-list-item>
   </v-navigation-drawer>
-  <v-main><router-view></router-view> </v-main>
+  <v-main>
+    <div class="pa-4">
+      <router-view></router-view>
+    </div>
+  </v-main>
 </template>
